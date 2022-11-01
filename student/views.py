@@ -1,5 +1,4 @@
-from email import message
-from http.client import HTTPResponse
+
 from http.client import HTTPResponse
 from multiprocessing import context
 from django.shortcuts import render
@@ -31,3 +30,17 @@ def all_student(request):
         mesg = "can't file the query all object by Student table"
         context = {'mesge': e}
         return render(request, "all_student.html", context)
+
+
+from teacher.forms import TeacherForm
+def create_student(request):
+    if request.method == 'POST':
+        form_value = TeacherForm(request.POST)
+        if form_value.is_valid():
+            form_value.save()
+
+            return HttpResponse("your data succesfully submited") #this for cmd check
+
+    form = TeacherForm()
+    context = {'form': form}
+    return render(request, 'create_student.html', context)
