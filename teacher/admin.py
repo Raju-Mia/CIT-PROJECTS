@@ -5,3 +5,6 @@ from .models import *
 admin.site.register(Teacher)
 admin.site.register(SeniorTeacher)
 admin.site.register(JuniorTeacher)
+
+admin.site.register(Parent)
+admin.site.register(Child)

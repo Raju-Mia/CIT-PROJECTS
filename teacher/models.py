@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.db import models
 
 # Create your models here.
@@ -29,3 +30,19 @@ class JuniorTeacher(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Parent(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+class Child(models.Model):
+    name = models.CharField(max_length=30)
+    parent = models.ForeignKey(Parent, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
