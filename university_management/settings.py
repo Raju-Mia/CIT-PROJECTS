@@ -126,3 +126,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# thsi a login redirect page url
+LOGIN_REDIRECT_URL = '/student/all-student'
+# LOGOUT_REDIRECT_URL = '/accounts/login' # this line for redirect to login page.
