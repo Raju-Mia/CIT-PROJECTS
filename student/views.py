@@ -11,8 +11,9 @@ from student.models import Student
 def index(request):
     return HttpResponse("this is a student pages")
 
-
-
+#this login required means --must should login.
+from django.contrib.auth.decorators import login_required
+@login_required
 def all_student(request):
     
     try:
